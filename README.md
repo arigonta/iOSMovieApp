@@ -27,6 +27,10 @@ A simple iOS app for searching and viewing movie details using The Movie Databas
     ```
 4.  Build and Run.
 
+## Demo
+
+https://github.com/user-attachments/assets/03f16467-09f2-4db9-82b3-13b2ab8b3bec
+
 ## Architecture
 
 The app uses **MVVM (Model-View-ViewModel)** architecture with **SwiftUI**.
