@@ -1,20 +1,30 @@
 //
 //  iOSMovieAppApp.swift
 //  iOSMovieApp
+//  Created by Armadi Gonta on 13/01/26.
 //
-//  Created by Gonta on 13/01/26.
+//  Movies App - SwiftUI Entry Point
 //
 
 import SwiftUI
+import netfox
 
 @main
 struct iOSMovieAppApp: App {
-    let persistenceController = PersistenceController.shared
-
+    
+    init() {
+        // Configure image cache on launch
+        ImageCache.configure()
+        
+        // Start Netfox for network debugging (shake device to open)
+        #if DEBUG
+        NFX.sharedInstance().start()
+        #endif
+    }
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            MoviesAppView()
         }
     }
 }

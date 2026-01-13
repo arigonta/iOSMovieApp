@@ -1,0 +1,5 @@
+// Config.sample.xcconfig
+// Copy this file to Config.xcconfig and add your TMDB API key
+// DO NOT commit Config.xcconfig to version control
+
+TMDB_API_KEY = YOUR_API_KEY_HERE

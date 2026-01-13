@@ -23,12 +23,26 @@ final class iOSMovieAppUITests: XCTestCase {
     }
 
     @MainActor
-    func testExample() throws {
+    func testAppLaunchAndHomeElements() throws {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
 
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        // Check if "Movies" title exists (AppTheme title)
+        let moviesTitle = app.staticTexts["Movies"]
+        XCTAssertTrue(moviesTitle.exists, "Movies title should be visible on home screen")
+        
+        // Check for tab bar
+        let tabBar = app.tabBars.firstMatch
+        XCTAssertTrue(tabBar.exists, "Tab bar should be visible")
+        
+        // Check for Discover tab
+        let discoverButton = tabBar.buttons["Discover"]
+        XCTAssertTrue(discoverButton.exists, "Discover tab should exist")
+        
+        // Check for Favorites tab
+        let favoritesButton = tabBar.buttons["Favorites"]
+        XCTAssertTrue(favoritesButton.exists, "Favorites tab should exist")
     }
 
     @MainActor
